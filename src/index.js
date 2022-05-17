@@ -79,6 +79,7 @@ app.post('/login', async (req, res) => {
       const resultEmail = await bcrypt.compare(password,result.password) 
       if(resultEmail){
          const token  = await result.saveToken()
+         console.log(token);
          res.cookie('token',token,{
             expires:new Date(Date.now()+120000),
             httpOnly:true
@@ -92,7 +93,9 @@ app.post('/login', async (req, res) => {
             session.user.email= result.email;
             req.session.save(function(err){
                if(err) next(err)
-               res.redirect('/')
+               res.render('index',{
+                  name:result.name
+                  }) 
             })
  
          })
@@ -120,7 +123,11 @@ app.get('/jsonWebToken',async (req, res) => {
 })
 
 const authenticate =  async function(req,res,next){
-  if(req.url=='/logout'){
+   console.log(req.url);
+  if(req.url==='/logout'){
+   console.log(req.url);
+     console.log('request user data');
+     console.log(req.userData);
       const session       = req.session;
       req.userData.tokens =[]
       await req.userData.save() 
