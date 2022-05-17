@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    {{>header}}
+    <section id="main-section">
+        <div class="row">
+            <div class="left">
+                <img src="images/about.jpg">
+            </div>
+            <div class="right"> 
+                <form class="registerForm" action="/" method="POST"> 
+                    <div class="heading"> <h2>Registration Form</h2></div>
+                    <input type="text" name="name" placeholder="enter your name" id="Name"/> 
+                    <input type="email" name="email" placeholder="enter your email id" id="Email"/> 
+                    <input type="password" name="password" placeholder="enter your password" id="password"/> 
+                    <input type="password" name="cpassword" placeholder="confirm your password" id="CPassword"/>
+                    <div class="btn-row">
+                         <button>Register</button>  
+                        <button>Cancel</button> 
+                    </div> 
+                </form>
+            </div> 
+        </div>
+    </section>
+        {{>footer}}
+</body>
+</html>

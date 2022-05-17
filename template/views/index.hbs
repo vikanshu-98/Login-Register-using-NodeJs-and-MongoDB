@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    {{>header}}
+    <section id="banner">
+        <div class="banner-text">
+            <h1>welcome to <span>the legendery</span> text <br> you want to add here</h1>
+            <button type="button">click on me</button>
+        </div>
+    </section>
+    {{>footer}}
+    <script>
+        let display= document.getElementById('sideMenu');
+        let hidden = document.getElementById('closeMenu');
+        let list   = document.getElementById('list'); 
+        display.onclick=function(){
+            list.style.visibility="visible";  
+            list.style.right="0%";
+        }
+        hidden.onclick=function(){
+            list.style.right="-50%";
+        }
+
+    </script>
+</body>
+</html>
