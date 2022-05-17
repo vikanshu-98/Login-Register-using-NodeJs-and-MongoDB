@@ -27,7 +27,7 @@ app.get('/register', (req, res) => {
 }); 
 app.post('/', async (req, res) => {
    try{
-      console.log(req.body.email)
+      // console.log(req.body.email)
       const email = req.body.email;
       const password= req.body.password;
       const cpassword = req.body.cpassword;
@@ -45,7 +45,7 @@ app.post('/', async (req, res) => {
              })
  
             const token  = await fUsers.saveToken()
-             console.log(token);
+            //  console.log(token);
             res.cookie('token',token,{
                expires:new Date(Date.now()+600000),
                httpOnly:true
@@ -53,7 +53,7 @@ app.post('/', async (req, res) => {
             });
             const result = await fUsers.save(fUsers)
             if(result){
-               console.log(result);
+               // console.log(result);
                res.redirect('/')
             }
             else{
@@ -80,7 +80,7 @@ app.post('/login', async (req, res) => {
          httpOnly:true
       
       });
-      console.log(token);
+       
       if(resultEmail){
          res.render('index') 
       }else{    
@@ -100,18 +100,17 @@ app.get('/jsonWebToken',async (req, res) => {
   res.send(token);
 
   const result = await jsonwebtoken.verify(token,'Vikanshu chuahanis  a good boy');
-  console.log(result);
+//   console.log(result);
 })
 
 
 app.get('/secret', auth, (req, res) => {
-  console.log("my tokin is "+req.token)
+ 
    res.render('secret')
  })
 
  app.get('/logout', auth, async(req, res) => {
-   try{
-      console.log("without modified");
+   try{ 
       // single user logout
 
 
@@ -122,8 +121,8 @@ app.get('/secret', auth, (req, res) => {
       // multiple user logout 
       req.userData.tokens=[]
 
-      console.log("modified data and token is++++++");
-      console.log(req.userData.length);
+      // console.log("modified data and token is++++++");
+      // console.log(req.userData.length);
       await req.userData.save() 
       res.clearCookie('token')
       res.render('login')
