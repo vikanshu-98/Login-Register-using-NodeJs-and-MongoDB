@@ -7,9 +7,8 @@ const users = require('./DB/Models/users')
 const bcrypt =require('bcrypt')
 const jsonwebtoken = require('jsonwebtoken')
 const cookieParser  =  require("cookie-parser")
-const auth          = require('./Middleware/auth');
-const { response } = require('express');
-const port = process.env.PORT | 3300;
+const auth          = require('./Middleware/auth'); 
+const port = process.env.PORT || 3300;
 const statispath = path.join(__dirname, '../public')
 
 require('./DB/connection/connect')
