@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unauthorized</title>
+     <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+ 
+  svg {
+    width: 30%;
+    margin: 0 5% 3vh !important;
+  }
+
+  .st0{fill:#EFCBB4;}
+  .st1{fill:#FFE1CA;}
+  .st2{fill:#473427;}
+  .st3{
+      fill:none;
+      stroke:#473427;
+      stroke-width:7;
+      stroke-linecap:round;
+      stroke-miterlimit:10;
+  }
+  .st4{fill:#D37D42;stroke:#D37D42;stroke-miterlimit:10;}
+
+  .smile {
+    display: block;
+  }
+  .uhoh {
+    display: none;
+  }
+  path.smile {
+      fill-opacity: 0;
+      stroke: #000;
+      stroke-width: 6;
+      stroke-dasharray: 870;
+      stroke-dashoffset: 870;
+      animation: draw 7s infinite linear;
+    }
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  #path {
+    stroke-dasharray: 628.3185307179587;
+    animation: dash 5s linear forwards;
+  }
+  @keyframes dash {
+    from {
+      stroke-dashoffset: 628.3185307179587;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  
+  .message h1 {
+    color: #3698DC;
+    font-size: 3vw !important;
+    font-weight: 400;
+  }
+  .message p {
+    color: #262C34;
+    font-size: 1.3em;
+    font-weight: lighter;
+    line-height: 1.1em;
+  }
+  
+  .link-row{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto 0;
+    width: 100%;
+    height: 100vh;
+  }
+  .message h1{
+    font-weight: bold;
+    font-size: 26px !important;
+  }
+  .go-to-home{
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+    text-decoration: none;
+    outline: none;
+    box-shadow: 0px 3px 8px -1px #000;
+
+  }
+  .message{
+    display: grid;
+    place-items: center;
+  }
+  .go-to-home:hover{
+    color: #f44336;
+    border: 2px solid #f44336 !important;
+    background-color: transparent;
+  }
+
+  </style>
+</head>
+<body>
+   {{>header}}
+    <div class="expired link-row">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 464 390.4" style="enable-background:new 0 0 464 390.4;" xml:space="preserve">
+      
+        <circle class="st0" cx="126" cy="175.4" r="12"/>
+        <circle class="st0" cx="339" cy="175.4" r="12"/>
+        <circle class="st1" cx="232.5" cy="170.9" r="106.5"/>
+        <path class="st2" d="M126,164.4c0,0,4.5-15.4,10.5-19.6c0,0,31,0,65-26.5c0,0,110,85.9,176-30.8c0,0-33,28.6-116-41.4
+          c0,0-131-16.2-135.5,106V164.4z"/>
+        <path class="st2" d="M339,164.4c0,0,6.2-13.3-8.2-32.4l-6.3,3.9C324.5,135.9,333.5,142.9,339,164.4z"/>
+        <path class="st2" d="M247.8,45.3c0,0,47.7-5.3,76.7,53.7L247.8,45.3z"/>
+        <circle class="st2" cx="192" cy="175.4" r="9"/>
+        <circle class="st2" cx="271" cy="175.4" r="9"/>
+        <path class="st4" d="M101.4,390.1c22.1-106.8,75.7-114.1,137.1-114.1c61.4,0,104,18.8,130.1,114.1
+          C368.7,390.6,101.3,390.6,101.4,390.1z"/>
+      
+        <circle id="path" class="st3 uhoh" cx="234.5" cy="230.5" r="20"/>
+        <path class="st3 smile" d="M191,214.4c-1.1-1.5,38.6,49.3,83,0"/>
+        </svg> 
+        <div class="message">
+            {{#if is404}}
+                <h1>{{message}}</h1>
+                {{^}}
+                <h1>Oops, You are not authorized user for access the page.</h1>
+              {{/if}}
+          <a  class="go-to-home" href="/" target="_blank">Go to Home Page</a>
+        </div> 
+    </div>
+    
+  {{>footer}}
+</body>
+</html>

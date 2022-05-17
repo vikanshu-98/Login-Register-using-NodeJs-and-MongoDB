@@ -174,8 +174,16 @@ app.get('/secret', auth,authenticate,async (req, res) => {
    }
 })
 
+
+app.get('/authorized', (req, res) => {
+   res.render('authorized')
+})
+
 app.get('*', (req, res) => {
-   res.status(404).send('oops!! page not found')
+   res.status(404).render('authorized',{
+      message:"Oops!! page not found.",
+      is404:true
+   })
 })
 
 

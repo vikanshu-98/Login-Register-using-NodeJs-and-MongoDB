@@ -33,7 +33,7 @@
     color: #f44336;
 }
 
-.banner-text button{
+.banner-text button,.go-to-home{
     display: block;
     text-align: center;
     padding: 10px 20px;
@@ -48,7 +48,7 @@
     cursor: pointer;
 }
 
-button:hover{
+button:hover,.go-to-home:hover{
     border: 2px solid #fff;
     background-color: transparent;
 }
@@ -263,6 +263,9 @@ z-index: 10;
     background-color: #f44336;
     color: #fff;
     margin-top: auto;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .footer-row .col-12{
