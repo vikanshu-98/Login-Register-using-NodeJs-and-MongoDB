@@ -12,11 +12,11 @@
                <li><a href="/secret"> <i class="fa fa-user-secret"></i> SECRET</a></li>
                 {{#if loginUser }}
                     <li><a href="#"> <i class="fa fa-user"></i> {{loginUser}}</a></li>
+                    <li><a href="/logout"> <i class="fa fas fa-user-lock "></i> LOGOUT</a></li> 
                 {{^}}
                     <li><a href="/register">  <i class="fa fa-registered"></i> REGISTER</a></li> 
                     <li><a href="/login"> <i class="fa fa-lock"></i> LOGIN</a></li>
                 {{/if}} 
-               <li><a href="/logout"> <i class="fa fas fa-user-lock "></i> LOGOUT</a></li> 
            
                 <img src="images/arrow.png" alt="" id="closeMenu">
             </ul>
